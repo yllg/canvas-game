@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>见缝插针小游戏  学号014号</title>
+<style>
+* {
+	padding:0;
+	margin:0;
+}
+body, html {
+	height:100%;
+}
+body {
+	background:url(img/11.jpg)  no-repeat  100% ;
+}
+.container {
+	width:300px;
+	margin:50px auto;
+}
+h2 {
+	font-size:35px;
+	text-align:center;
+	margin-top:150px;
+	letter-spacing:2px;
+}
+.play {
+	margin-top:50px;
+	text-align:center;
+}
+.play a {
+	display:inline-block;
+	border:1px #666 solid;
+	border-radius:8px;
+	padding:45px 25px 12px;
+	font-size:16px;
+	background:url(img/play.png) no-repeat center 12px;
+	color:#505050;
+	font-weight:bold;
+	text-decoration:none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>见缝插针小游戏</h2>
+  <div class="play"> <a href="play.html" id="go">关卡<span id="leavl">1</span></a> </div>
+</div>
+</body>
+<script>
+	//每次闯关成功过或者失败，都跳回这个html页面，按顺序一定会加载到这段JS哦
+	var leavl = parseInt(window.location.href.split("#")[1]);
+	if(leavl){
+		if(leavl==8){
+			leavl = 1;
+		}
+		document.getElementById("leavl").innerHTML =leavl;
+		document.getElementById("go").setAttribute("href","play.html#"+ leavl);
+	}
+ </script>
+</html>
