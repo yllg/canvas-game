@@ -173,15 +173,6 @@ setInterval(function(){
 	cxt.clearRect(0,0,600,345);  //每次清空转动球区域
 	big();  //绘制中间大球
 	drawRunBall(10);  //每次让转动球，顺时针加10度
- 
- 	if(state==0){
-		alert("  (╥╯^╰╥)   (╥╯^╰╥)  闯关失败   (╥╯^╰╥)   (╥╯^╰╥)");
-		window.location.href = "index.html#"+level;
-	}else if(state==1){
-		alert("ヾ(✿ﾟ▽ﾟ)ノ  ヾ(✿ﾟ▽ﾟ)ノ  闯关成功     ヾ(✿ﾟ▽ﾟ)ノ  ヾ(✿ﾟ▽ﾟ)ノ");
-		level++;
-		window.location.href = "index.html#"+level;
-	}
 },levelArray[level-1].speed);   //循环的时间取决于关卡等级
 
 
@@ -216,5 +207,15 @@ canvas.onclick = function(){
 	drawWaitBall();   
 	//重新绘制转动球
 	drawRunBall(0);
+
+	//判断闯关是否成功
+	if(state==0){
+		alert("  (╥╯^╰╥)   (╥╯^╰╥)  闯关失败   (╥╯^╰╥)   (╥╯^╰╥)");
+		window.location.href = "index.html#"+level;
+	}else if(state==1){
+		alert("ヾ(✿ﾟ▽ﾟ)ノ  ヾ(✿ﾟ▽ﾟ)ノ  闯关成功     ヾ(✿ﾟ▽ﾟ)ノ  ヾ(✿ﾟ▽ﾟ)ノ");
+		level++;
+		window.location.href = "index.html#"+level;
+	}
 }
 
